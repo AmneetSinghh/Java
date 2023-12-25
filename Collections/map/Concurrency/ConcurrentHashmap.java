@@ -1,4 +1,4 @@
-package Collections.map;
+package Collections.map.Concurrency;
 
 
 import java.util.Map;
@@ -32,8 +32,8 @@ public class ConcurrentHashmap {
     }
 
 
-    // compute serially if key will be same for both.
-    // compute parallel if key will be different for both.
+    // compute run serially if key  same for both ( Locking of ConcurrentHashmap on same key)
+    // compute run parallel if key  different for both. ( No Locking of ConcurrentHashmap on different key)
     public void givenOneThreadIsWriting_whenAnotherThreadWritesAtDifferentKey_thenNotWaitAndGetCorrectValue() throws Exception {
         ExecutorService threadExecutor = Executors.newFixedThreadPool(2);
 
@@ -68,6 +68,7 @@ public class ConcurrentHashmap {
 //        map.givenOneThreadIsWriting_whenAnotherThreadReads_thenGetCorrectValue();
         map.givenOneThreadIsWriting_whenAnotherThreadWritesAtDifferentKey_thenNotWaitAndGetCorrectValue();
     }
+
 
 }
 

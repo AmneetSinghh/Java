@@ -1,0 +1,2 @@
+ Thus, the methods — computeIfAbsent, computeIfPresent, compute and merge of concurrent hashmap are
+ atomic methods and can be used in a multithreaded environment without any explicit locking.
